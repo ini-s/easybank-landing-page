@@ -1,0 +1,310 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Public Sans', sans-serif;
+    text-align: center;
+    color: hsl(233, 8%, 62%);
+    overflow-x: hidden;
+}
+
+header {
+    background-color: hsl(0, 0%, 100%);
+    padding: 1.5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav {
+    display: flex;
+}
+
+.side-nav {
+    position: absolute;
+    top: 7rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 5;
+    background-color: hsl(0, 0%, 100%);
+    width: 80%;
+    padding-block: 2rem;
+    border-radius: 5px;
+}
+
+.side-nav ul li {
+    padding-bottom: 1rem;
+    color: hsl(233, 26%, 24%);
+}
+
+.side-nav,
+.menu,
+.menu.inactive {
+    display: none;
+}
+
+.close {
+    display: none;
+}
+
+.close.active {
+    display: block;
+}
+
+.side-nav.active {
+    display: block;
+}
+
+ul li {
+    list-style: none;
+}
+
+ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-btn {
+    padding: 0.7rem 1.5rem;
+}
+
+.nav-btn,
+.home-btn,
+.footer-btn {
+    background-image: linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
+    color: hsl(0, 0%, 100%);
+    border-radius: 15rem;
+    border: none;
+    cursor: pointer;
+}
+
+.home-btn {
+    padding: 1rem 2.5rem;
+}
+
+.overlay {
+    display: none;
+}
+
+.overlay.active {
+    display: block;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    opacity: 0.9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.home {
+    width: 100vw;
+    margin-bottom: 2rem;
+}
+
+.home-images {
+    position: relative;
+}
+
+.home-background-mobile {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -2;
+    width: 100%;
+    display: block;
+}
+
+.home-background-desktop {
+    display: none;
+}
+
+.home-text {
+    padding: 2rem;
+}
+
+.phones {
+    /* position: absolute;
+    left: 0;
+    top: -11rem;
+    z-index: -1; */
+    width: 100%;
+}
+
+h1 {
+    font-size: 2.5rem;
+
+}
+
+p {
+    padding-block: 1.5rem;
+    line-height: 1.5;
+    font-size: 1.125rem;
+}
+
+h1,
+h3,
+h2 {
+    color: hsl(233, 26%, 24%);
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    padding-top: 2rem;
+}
+
+.middle {
+    padding: 3rem 2rem;
+    background-color: hsl(220, 16%, 96%);
+}
+
+.middle p {
+    color: hsl(233, 8%, 62%);
+}
+
+.card {
+    margin-top: 2rem;
+    width: 100%;
+    flex-basis: 250px;
+}
+
+.card img {
+    width: 100%;
+}
+
+.card-text {
+    padding: 2rem 2.5rem;
+}
+
+.bottom {
+    padding: 4rem 2rem;
+    background-color: hsl(0, 0%, 98%);
+}
+
+.bottom .card {
+    text-align: left;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 5px;
+}
+
+.bottom .card img {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+h5 {
+    font-weight: 400;
+}
+
+.bottom h3 {
+    font-size: 1.5rem;
+    padding-top: 1rem;
+}
+
+.bottom p {
+    padding-top: 1rem;
+}
+
+footer {
+    background-color: hsl(233, 26%, 24%);
+}
+
+footer {
+    color: hsl(0, 0%, 98%);
+    padding: 2rem 0;
+    font-weight: 100;
+}
+
+footer a {
+    text-decoration: none;
+    color: hsl(0, 0%, 98%);
+    font-weight: 100;
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.icons {
+    padding-block: 2rem;
+}
+
+.icons svg {
+    margin-right: 1rem;
+}
+
+footer p {
+    font-size: 1rem;
+    opacity: 0.5;
+    padding: 0;
+}
+
+footer h4 {
+    padding-block: 0.5rem;
+}
+
+.footer-btn {
+    margin-block: 1.5rem;
+    padding: 0.7rem 2rem;
+}
+
+@media screen and (max-width: 769px) {
+
+    .main-nav,
+    .nav-btn {
+        display: none;
+    }
+
+    .menu {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        padding: 1.5rem;
+    }
+}
+
+@media screen and (min-width:600px) {
+    .home-background-mobile {
+        display: none;
+    }
+
+    .home-background-desktop {
+        display: block;
+    }
+
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    .card {
+        flex-basis: 270px;
+    }
+
+    body {
+        text-align: left;
+    }
+
+    .home,
+    .middle,
+    .bottom,
+    footer {
+        padding: 4rem 6rem;
+    }
+}
