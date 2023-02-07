@@ -8,7 +8,7 @@ body {
     font-family: 'Public Sans', sans-serif;
     text-align: center;
     color: hsl(233, 8%, 62%);
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 header {
@@ -16,7 +16,8 @@ header {
     padding: 1.5rem 4rem;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    position: relative;
+    z-index: 99;
 }
 
 .main-nav {
@@ -108,25 +109,31 @@ ul li a {
 }
 
 .home {
-    width: 100vw;
-    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .home-images {
     position: relative;
 }
 
-.home-background-mobile {
+.home-background-mobile,
+.home-background-desktop {
     position: absolute;
     top: 0;
-    right: 0;
-    z-index: -2;
+    z-index: 1;
     width: 100%;
+}
+
+.home-background-mobile {
     display: block;
+    left: 0;
+    top: -2rem;
 }
 
 .home-background-desktop {
     display: none;
+    right: 0;
 }
 
 .home-text {
@@ -134,11 +141,10 @@ ul li a {
 }
 
 .phones {
-    /* position: absolute;
-    left: 0;
-    top: -11rem;
-    z-index: -1; */
     width: 100%;
+    position: relative;
+    z-index: 1;
+    top: -6rem;
 }
 
 h1 {
@@ -192,6 +198,10 @@ h3 {
 
 .bottom {
     padding: 4rem 2rem;
+}
+
+.home,
+.bottom {
     background-color: hsl(0, 0%, 98%);
 }
 
@@ -221,6 +231,8 @@ h5 {
 
 footer {
     background-color: hsl(233, 26%, 24%);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
 footer {
@@ -270,11 +282,19 @@ footer h4 {
     .menu {
         display: block;
     }
+
+    .phones{
+        top:0;
+    }
 }
 
 @media screen and (max-width: 600px) {
     header {
         padding: 1.5rem;
+    }
+
+    .home-text {
+        padding-top: 0 !important;
     }
 }
 
@@ -285,26 +305,58 @@ footer h4 {
 
     .home-background-desktop {
         display: block;
+        right: 0;
+    }
+
+    .home-images {
+        order: 1;
+    }
+
+    .phones {
+        position: absolute;
+        left: 0;
     }
 
     .cards {
         display: flex;
         flex-wrap: wrap;
         gap: 2rem;
+        justify-content: space-between;
     }
 
     .card {
-        flex-basis: 270px;
+        flex-basis: 300px;
     }
 
     body {
         text-align: left;
     }
 
-    .home,
+    .home-text {
+        padding: 8rem 0 8rem 8rem;
+    }
+
     .middle,
     .bottom,
     footer {
-        padding: 4rem 6rem;
+        padding: 6rem 8rem;
+    }
+}
+
+@media screen and (max-width: 969px) {
+
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 500px){
+    .home{
+        gap: 3rem;
     }
 }
