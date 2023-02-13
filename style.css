@@ -261,6 +261,23 @@ h5 {
     padding-top: 1rem;
 }
 
+/* .bottom .card-text p:after{
+    display: inline-block;
+    content:"";
+    height:1px;
+    width: 2px;
+    background-color: hsl(233, 8%, 62%);
+} */
+
+.ellipse {
+    height:2px;
+    width: 2.7px;
+    border-radius: 50%;
+    background-color: hsl(233, 8%, 62%);
+    display: inline-block;
+    margin-right:1.5px;
+}
+
 footer {
     background-color: hsl(233, 26%, 24%);
     color: hsl(0, 0%, 98%);
